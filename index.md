@@ -35,3 +35,312 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+
+
+	<script src="mainFunction.js"></script>
+
+<!-- HTML __________________________________________________________________________________________________________________________________-->
+
+	<title>Godborn-maker by Ellil1</title>
+	
+  
+	</head>
+	
+	<body onload="openNW(event, 'Display2');setFirstRole(mainRole)">
+<ul class="tab">
+  <li><a id="Display2Tab" href="#" class="tablinks" onclick="openNW(event, 'Display2')">God/Legendary Abilities Finder</a></li>
+  <li><a id="Display1Tab" href="#" class="tablinks" onclick="openNW(event, 'Display1')">Aspects, Skills and Stunts Builder</a></li>
+  <li><a id="Display3Tab" href="#" class="tablinks" onclick="openNW(event, 'Display3')">Character Sheet Generation</a></li>
+</ul>
+	<br>
+<div id="Display1" class="tabcontent" style="display:none">
+<div  style="float:left;width:350px">
+<a class="one"href="http://wyrdwalkers.wikidot.com/Character_Creation">Guidance for Character Creation</a>
+  <br>
+ <br><a class="two">Aspects</a>
+
+<a class="one"href="http://fate-srd.com/fate-core/making-good-aspect" target="_blank">Guidance on creating Character Aspects</a> <br>
+<a class="one"href="https://wiki.rpg.net/index.php/Aspects_List#Character_Aspects" target="_blank">Ideas for Character Aspects</a>
+
+<br>
+  <input type="text" id="highConcept" placeholder="High Concept"> <br>
+  <input type="text" id="trouble" placeholder="Trouble"> <br>
+  <input type="text" id="aspect1" placeholder="First Aspect"> <br>
+  <input type="text" id="aspect2" placeholder="Second Aspect"> <br>
+  <input type="text" id="aspect3" placeholder="Third Aspect"> 
+ <br> <br><a class="two">Skills</a>
+<table style="width:100%">
+  <tr>
+    <td title = "- Jump over a wall. - Run a sprint.">Athletics</td>
+    <td title = "- Swing a sword. - Throw a punch.">Fight</td>
+    <td title = "- Patch a wound. - Find the antidote to a poison.">First Aid</td>
+    <td title = "- Know a magical incantation. - Know ancient history.">Lore</td>
+  </tr>
+  <tr>
+    <td title = "- Trick an enemy. - Talk your way past an annoying bouncer.">Manipulation</td>
+    <td title = "- Shoot a bow. - Throw a fireball with accuracy.">Marksmanship</td>
+    <td title = "- Get the drop on an enemy. - Find clues.">Notice</td>
+    <td title = "- Run a marathon. - Withstand physical trauma.">Physique</td>
+ </tr>
+  <tr>
+    <td title = "- Order soldiers. - Interrogate a suspect.">Presence</td>
+    <td title = "- Make friends at a bar. - Mediate a negotiation.">Rapport</td>
+    <td title = "- Buy a car. - Hire mercenaries.">Resources</td>
+    <td title = "- Pickpocket a target. - Skulk unnoticed.">Stealth</td>
+  </tr>
+  <tr> 
+    <td title = "- Hack a computer. - Build a grenade.">Technology</td>
+    <td title = "- Resist mental attacks. - Control magical powers by sheer will.">Will</td>
+  </tr>
+</table>    
+<br>
+<input type="text" id="31" placeholder="Skill" size="10"><br>
+<input type="text" id="21" placeholder="Skill" size="10"><input type="text" id="22" placeholder="Skill" size="10"><br>
+<input type="text" id="11" placeholder="Skill" size="10"><input type="text" id="12" placeholder="Skill" size="10"><input type="text" id="13" placeholder="Skill" size="10">
+
+  <br><br>
+  </div>
+ <div style="width:300px; float:left">
+ <a class="two">Stunts</a>
+<a class="one" href="http://fate-srd.com/fate-core/building-stunts" target="_blank">Guidance on creating Stunts</a> <br>
+<a class="one" href="http://evilhat.wikidot.com/fate-core-stunts" target="_blank">Ideas for Normal Stunts</a><br>
+  <textarea id="stunt1" rows="4" cols="30" placeholder="Stunt"></textarea> <br>
+  <textarea id="stunt2" rows="4" cols="30" placeholder="Stunt"></textarea> <br>
+  <textarea id="stunt3" rows="4" cols="30" placeholder="Stunt"></textarea> <br>
+ </div>
+<div style="width:350px; display:block; float:left">
+<a class="two">Legendary Abilities</a>
+ <a href="http://wyrdwalkers.wikidot.com/legendary-disciplines" target="_blank">Explanations of the Legendary Skills and Stunts</a> <br>
+<a href="http://wyrdwalkers.wikidot.com/legendary-abilities" target="_blank">List of Legendary Abilities, with Examples for Legendary Skills and Stunts.</a>
+
+<br>
+  <textarea id="legend1" rows="4" cols="30" placeholder="Legendary Skill or Stunt"></textarea> <br>
+  <textarea id="legend2" rows="4" cols="30" placeholder="Legendary Skill or Stunt"></textarea> <br>
+  <textarea id="legend3" rows="4" cols="30" placeholder="Legendary Skill or Stunt"></textarea> <br>
+ <br>
+ </div>
+ </div>
+<div id="Display2" class="tabcontent" style="display:none">
+<div id="godFinder" style="width:600px; float:left">
+<br>
+<label for="approaches">Choose an Approach</label>	   
+<select id="approaches" name="approaches" onchange="godRecommender()">
+    <option value="noPreference" selected="selected">No Preference</option> 
+    <option value="Careful">Careful</option>
+    <option value="Clever">Clever</option>
+    <option value="Flashy">Flashy</option>
+    <option value="Forceful">Forceful</option>
+    <option value="Quick">Quick</option>
+    <option value="Sneaky">Sneaky</option>
+</select>
+<br>
+<label for="domains">Choose a Domain</label>	   
+<select id="domains" name="domains" onchange="godRecommender()">
+    <option value="noPreference" selected="selected">No Preference</option> 
+    <option value="Crafting Deity">Crafting</option>
+    <option value="Darkness Deity">Darkness</option>
+    <option value="Death Deity">Death</option>
+    <option value="Earth Deity">Earth</option>
+    <option value="Fertility Deity">Fertility</option>
+    <option value="Fire Deity">Fire</option>
+    <option value="Justice Deity">Justice</option>
+    <option value="Knowledge Deity">Knowledge</option>
+    <option value="Leader of the Gods">Leader</option>
+    <option value="Love Deity">Love</option>
+    <option value="Moon Deity">Moon</option>
+    <option value="Nature Deity">Nature</option>
+    <option value="Order Deity">Order</option>
+    <option value="Progenitor of the Gods">Progenitor</option>
+    <option value="Sky Deity">Sky</option>
+    <option value="Sun Deity">Sun</option>
+    <option value="Travel Deity">Travel</option>
+    <option value="War Deity">War</option>
+    <option value="Water Deity">Water</option>
+    <option value="Wisdom Deity">Wisdom</option>
+    <option value="Wit Deity">Wit</option>	</select>
+<br>
+
+<label for="personality">Choose a Personality</label>	   
+<select id="personality" name="personality" onchange="godRecommender()" >
+    <option value="noPreference" selected="selected">No Preference</option> 
+    <option value="General">General</option>
+    <option value="Politician">Politician</option>
+    <option value="Free Spirit">Free Spirit</option>
+    <option value="King">King</option>
+    <option value="Mother">Mother</option>
+    <option value="Thinker">Thinker</option>
+    <option value="Harmonizer">Harmonizer</option>
+    <option value="Prince">Prince</option>
+    <option value="Enforcer">Enforcer</option>
+    <option value="Manipulator">Manipulator</option>
+    <option value="Trickster">Trickster</option>
+    <option value="Diplomat">Diplomat</option>
+    <option value="Protector">Protector</option>
+    <option value="Hunter">Hunter</option>
+	</select>
+
+<br>
+<label for="origins">Choose an Origin</label>	   
+<select id="origins" name="origins" onchange="godRecommender()">
+    <option value="noPreference" selected="selected">No Preference</option> 
+    <option selected value="Gods" >----Gods----</option>
+    <option value="African">African</option>
+    <option value="Aztec">Aztec</option>
+    <option value="Celtic">Celtic</option> 
+    <option value="Chinese">Chinese</option>
+    <option value="Egyptian">Egyptian</option>
+    <option value="Greek">Greek</option>
+    <option value="Inca">Inca</option>
+    <option value="Indian">Indian</option>
+    <option value="Japanese">Japanese</option>
+    <option value="Maori">Maori</option>
+    <option value="Norse">Norse</option>
+    <option value="Slavic">Slavic</option>
+
+     <option value="Titans" >----Titans----</option>
+    <option value="Death">Death</option>
+    <option value="Depths">Depths</option>
+    <option value="Fire">Fire</option> 
+    <option value="Light">Light</option>
+    <option value="Night">Night</option>
+    <option value="Ocean">Ocean</option>
+    <option value="Order">Order</option>
+    <option value="Sky">Sky</option>
+    <option value="World">World</option>
+
+    <option value="Otherworlds" >----Otherworlds----</option>
+    <option value="Dark Forest">Dark Forest</option>
+    <option value="Jade Sea">Jade Sea</option>
+    <option value="Shambhala">Shambhala</option>
+    <option value="Summer Court">Summer Court</option>
+    <option value="Winter Court">Winter Court</option>
+	
+    <option value="SecretSocieties" >----Secret Societies----</option>
+    <option value="Cabal">Cabal</option>	
+    <option value="Illuminati">Illuminati</option>
+    <option value="Order of the Jade Fist">Order of the Jade Fist</option>
+    <option value="Circle of Merlin">Circle of Merlin</option>		
+</select>
+<br><br>
+<table class="beta"  style="width: 100%;" id="Table" ></table>
+<br>
+<a id="noMatch"></a><br><br>
+<a id="hoverer"> </a>
+</div>
+	<div id="notGodFinder" style="width:400px; display:block; float:left">
+<a class="two">Legendary Ability and Skill Recommendations</a>
+	<label for="mainRole">Select Main Role</label>
+	<select id="mainRole" onchange="rolesChange(this); setFirstRole(mainRole)" >
+	<option value="Tank"> Tank</option>
+	<option selected value="Damage Dealer">Damage Dealer</option>
+	<option value="Party Face">Party Face</option>
+	<option value="Skill Monkey">Skill Monkey</option>
+	<option value="Support-Controller">Support/Controller</option>
+	
+	</select>
+	<br>
+
+	<label for="secondRole" >Select a Second Role</label>
+	<select id="secondRole" onchange = "setSecondRole(secondRole)">
+	<option value="empty">Select a Second Role</option> 
+	</select>
+	<br><br>
+
+ <textarea style="display:none" id="LegendaryAbilities" rows="11" cols="30"></textarea> 
+ <textarea style="display:none" id="Skills" rows="11" cols="12"></textarea>
+ 
+<div id="left" style="width:200px;">
+<a class="three" id="LegendaryFound1">   </a><br>
+<a class="three" id="LegendaryFound2">   </a><br>
+<a class="three" id="LegendaryFound3">   </a><br>
+<a class="three" id="LegendaryFound4">   </a><br>
+<a class="three" id="LegendaryFound5">   </a><br>
+<a class="three" id="LegendaryFound6">   </a><br>
+<a class="three" id="LegendaryFound7">   </a><br>
+<a class="three" id="LegendaryFound8">   </a><br>
+<a class="three" id="LegendaryFound9">   </a><br>
+<a class="three" id="LegendaryFound10">   </a><br>
+</div>
+  <div id="right" style="width:140px">
+<a class="three" id="SkillFound1">   </a><br>
+<a class="three" id="SkillFound2">   </a><br>
+<a class="three" id="SkillFound3">   </a><br>
+<a class="three" id="SkillFound4">   </a><br>
+<a class="three" id="SkillFound5">   </a><br>
+<a class="three" id="SkillFound6">   </a><br>
+<a class="three" id="SkillFound7">   </a><br>
+<a class="three" id="SkillFound8">   </a><br>
+<a class="three" id="SkillFound9">   </a><br>
+<a class="three" id="SkillFound10">   </a><br></div>
+<br>
+<a id="hoverer2"> </a>
+
+</div>	
+
+	
+</div>
+
+<div id="Display3" class="tabcontent" style="display:none">
+<button type="button" onclick="characterSheetSpawn()">Spawn a Character Sheet !</button> <br>	
+
+
+
+	<a>Character Sheet:</a><br>
+
+	
+			<textarea id="inputTextToSave" style="width:312px;height:256px"></textarea><br>
+	
+	
+
+	<a>Character Name:</a>
+	<input id="inputFileNameToSaveAs"></input>
+		<button onclick="saveTextAsFile()">Save Character Sheet</button>
+</div>
+
+	</body>
+	</html>
+	
+
+
+<!-- Javascript - Fonction Creation de Fiche__________________________________________________________________________________________________________________________________-->
+
+<script type='text/javascript'>
+
+function saveTextAsFile()
+{
+	var textToWrite = document.getElementById("inputTextToSave").value.replace(/\n/g, "\r\n") 
+	var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+	var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+
+	var downloadLink = document.createElement("a");
+	downloadLink.download = fileNameToSaveAs;
+	downloadLink.innerHTML = "Download File";
+	if (window.webkitURL != null)
+	{
+		// Chrome allows the link to be clicked
+		// without actually adding it to the DOM.
+		downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+	}
+	else
+	{
+		// Firefox requires the link to be added to the DOM
+		// before it can be clicked.
+		downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+		downloadLink.onclick = destroyClickedElement;
+		downloadLink.style.display = "none";
+		document.body.appendChild(downloadLink);
+	}
+
+	downloadLink.click();
+}
+
+function destroyClickedElement(event)
+{
+	document.body.removeChild(event.target);
+}
+
+
+</script>
