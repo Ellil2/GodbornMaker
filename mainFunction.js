@@ -676,7 +676,7 @@ for(p=0;p<secondOriginArray.length;p++){
 addPoint()
 		switchDivs("myCanvas")
 	switchDivs("questionsDiv")
-alert("The God you are closest to is " + matchArray[0][1].name + ", " +  matchArray[0][1].originString + " " + matchArray[0][1].description + "\nWiki Link: \nhttp://wyrdwalkers.wikidot.com/" + matchArray[0][1].name) 	
+alert("The God you are closest to is " + matchArray[0][1].name + ", " +  matchArray[0][1].originString + " " + matchArray[0][1].description + "\nWiki Link: \nhttp://wyrduk.wikidot.com/" + matchArray[0][1].name) 	
 	personalityMatcher()
 }
 
@@ -925,16 +925,16 @@ cell5.id = i.toString()
 
 if(newSecondOriginArray[i-2]){cell1.innerHTML = newSecondOriginArray[i-2].name;cell1.title = newSecondOriginArray[i-2].originString + " " + newSecondOriginArray[i-2].description}
 if(newSecondOriginArray[i-2] && newSecondOriginArray[i-2].name.length !=0){
-if(parametersArray.indexOf(newSecondOriginArray[i-2].originVar) < 63){cell2.innerHTML = '<a href="http://wyrdwalkers.wikidot.com/' + newSecondOriginArray[i-2].name + '"  target="_blank">Link</a>'}
-else{cell2.innerHTML = '<a href="http://wyrdwalkers.wikidot.com/' + newSecondOriginArray[i-2].originString + '"  target="_blank">Link</a>'}}
+if(parametersArray.indexOf(newSecondOriginArray[i-2].originVar) < 63){cell2.innerHTML = '<a href="http://wyrduk.wikidot.com/' + newSecondOriginArray[i-2].name + '"  target="_blank">Link</a>'}
+else{cell2.innerHTML = '<a href="http://wyrduk.wikidot.com/' + newSecondOriginArray[i-2].originString + '"  target="_blank">Link</a>'}}
 if(newSecondOriginArray[i-1]){cell3.innerHTML = newSecondOriginArray[i-1].name;cell3.title = newSecondOriginArray[i-1].originString + " " + newSecondOriginArray[i-1].description}
 if(newSecondOriginArray[i-1] && newSecondOriginArray[i-1].name.length !=0){
-if(parametersArray.indexOf(newSecondOriginArray[i-1].originVar) < 63){cell4.innerHTML = '<a href="http://wyrdwalkers.wikidot.com/' + newSecondOriginArray[i-1].name + '"  target="_blank">Link</a>'}
-else{cell4.innerHTML = '<a href="http://wyrdwalkers.wikidot.com/' + newSecondOriginArray[i-1].originString + '"  target="_blank">Link</a>'}}
+if(parametersArray.indexOf(newSecondOriginArray[i-1].originVar) < 63){cell4.innerHTML = '<a href="http://wyrduk.wikidot.com/' + newSecondOriginArray[i-1].name + '"  target="_blank">Link</a>'}
+else{cell4.innerHTML = '<a href="http://wyrduk.wikidot.com/' + newSecondOriginArray[i-1].originString + '"  target="_blank">Link</a>'}}
 if(newSecondOriginArray[i]){cell5.innerHTML = newSecondOriginArray[i].name;cell5.title = newSecondOriginArray[i].originString + " " + newSecondOriginArray[i].description}
 if(newSecondOriginArray[i] && newSecondOriginArray[i].name.length !=0){
-if(parametersArray.indexOf(newSecondOriginArray[i].originVar) < 63){cell6.innerHTML = '<a href="http://wyrdwalkers.wikidot.com/' + newSecondOriginArray[i].name + '"  target="_blank">Link</a>'}
-else{cell6.innerHTML = '<a href="http://wyrdwalkers.wikidot.com/' + newSecondOriginArray[i].originString + '"  target="_blank">Link</a>'}}
+if(parametersArray.indexOf(newSecondOriginArray[i].originVar) < 63){cell6.innerHTML = '<a href="http://wyrduk.wikidot.com/' + newSecondOriginArray[i].name + '"  target="_blank">Link</a>'}
+else{cell6.innerHTML = '<a href="http://wyrduk.wikidot.com/' + newSecondOriginArray[i].originString + '"  target="_blank">Link</a>'}}
 
 cell1.onclick = function() { for(i=2;i<document.getElementById("Table").rows.length*3;i+=3){
 if(this.id === i.toString()){ChosenGod = newSecondOriginArray[i-2].name}}LegendaryMakerTotal()}
@@ -1273,14 +1273,14 @@ function setChosenPantheon(selectedBox){
 curatedName = selectedBox.options[selectedBox.selectedIndex].value
 	
 
-document.getElementById ("PantheonLink").href = "http://wyrdwalkers.wikidot.com/"+ curatedName;
+document.getElementById ("PantheonLink").href = "http://wyrduk.wikidot.com/"+ curatedName;
 document.getElementById ("PantheonLink").innerHTML = "Wiki Link: "+ curatedName;
 
 document.getElementById('OriginLink').style.display = 'none'
 
 }
 function setChosenGod(selectedBox){
-document.getElementById ("OriginLink").href = "http://wyrdwalkers.wikidot.com/"+ selectedBox.options[selectedBox.selectedIndex].value;
+document.getElementById ("OriginLink").href = "http://wyrduk.wikidot.com/"+ selectedBox.options[selectedBox.selectedIndex].value;
 document.getElementById ("OriginLink").innerHTML = "Wiki Link: "+ selectedBox.options[selectedBox.selectedIndex].value;
 	ChosenGod = selectedBox.options[selectedBox.selectedIndex].value;
 document.getElementById('OriginLink').style.display = 'block'
