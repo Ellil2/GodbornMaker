@@ -1,0 +1,181 @@
+
+html {
+		margin:0;
+		padding:0;
+	
+	}
+	#wrap {
+		width:750px;
+		margin:0 auto;
+	}
+
+
+	#nav {
+		padding:5px 10px;
+	}
+	#nav ul {
+		margin:0;
+		padding:0;
+		list-style:none;
+	}
+	#nav li {
+		display:inline;
+		margin:0;
+		padding:0;
+	}
+	#main {
+		float:left;
+		width:350px;
+		padding:10px;
+	}
+	h2 {
+		margin:0 0 1em;
+	}
+	#sidebar {
+		float:left;
+		width:400px;
+		padding:10px;
+	}
+	#sidebar2 {
+		float:left;
+		width:400px;
+		padding:10px;
+	}
+	#footer {
+		clear:both;
+		padding:5px 10px;
+	}
+	#footer p {
+		margin:0;
+    }
+	* html #footer {
+		height:1px;
+	}
+
+* {
+   cursor: default;
+}
+
+td:hover{
+background-color:lightblue;
+}
+td:active{
+background-color:#0066ff;
+}
+
+
+
+#left {
+  float: left;
+  width: 65%;
+  overflow: hidden;
+}
+
+#right {
+  overflow: hidden;
+}
+
+textarea {
+   resize: none;
+}
+
+a.one{display:block}
+a.one:link, a:visited {text-decoration: none;display: inline-block;}
+a.one:hover, a:active {background-color: lightblue;}
+
+a.two{display:block}
+a.two{font-weight: bold;}
+a.two{text-decoration: underline;}
+a.two{color: #000099;}
+
+
+a.three:hover{background-color:lightblue}
+a.three{ color: black;}
+
+label {
+  width:200px;
+
+  display: inline-block;}
+  
+select{max-width:150px;
+color: blue;}
+
+ /* Tabs */
+ 
+ /* Style the list */
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 7px 9px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: #0066ff}ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 7px 9px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: #0066ff}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {background-color: #ccc;}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {background-color: #ccc;}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+
+canvas {
+
+  position: fixed; /* or absolute */
+  top: 20%;
+  left: 20%;
+}
+
